@@ -3,7 +3,6 @@ using XNode;
 
 namespace AI.BtGraph.Base
 {
-    [Serializable]
     public class BtNode : Node
     {
         public int Priority;
