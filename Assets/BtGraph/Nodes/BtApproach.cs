@@ -7,8 +7,8 @@ namespace AI.BtGraph
     {
         public override BtResult Exec(Data data)
         {
-            Vector3 dir = data.goal.position - data.mover.position;
-            data.mover.position += dir.normalized * 4f * Time.deltaTime;
+            Vector3 dir = data.goal.CachedTransform.position - data.mover.CachedTransform.position;
+            data.mover.CachedTransform.position += dir.normalized * 4f * Time.deltaTime;
             return BtResult.Success;
         }
     }

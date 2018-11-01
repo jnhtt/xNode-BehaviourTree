@@ -5,8 +5,7 @@ namespace AI.BtGraph
 {
     public class BtCheckDistance : BtDecorator
     {
-        public enum Condition
-        {
+        public enum Condition {
             Equal = 0,
             Less,
             LessEqual,
@@ -19,9 +18,8 @@ namespace AI.BtGraph
 
         public override bool Branch(Data data)
         {
-            float dist = Vector3.Distance(data.goal.position, data.mover.position);
-            switch (condition)
-            {
+            float dist = Vector3.Distance(data.goal.CachedTransform.position, data.mover.CachedTransform.position);
+            switch (condition) {
                 case Condition.Equal:
                     return Mathf.Approximately(dist, distance);
                 case Condition.Less:
@@ -33,7 +31,6 @@ namespace AI.BtGraph
                 case Condition.GreaterEqual:
                     return dist >= distance;
             }
-
             return false;
         }
     }

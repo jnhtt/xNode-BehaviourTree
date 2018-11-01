@@ -140,9 +140,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7670ec1eadf14427a0b4cff030a7c0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goal: {fileID: 826196291}
-  target: {fileID: 454070648}
-  graph: {fileID: 11400000, guid: 339437bf182654796b6222f24a06fb32, type: 2}
+  goal: {fileID: 454070652}
+  mover: {fileID: 826196295}
 --- !u!4 &2955176
 Transform:
   m_ObjectHideFlags: 0
@@ -169,8 +168,9 @@ GameObject:
   - component: {fileID: 454070651}
   - component: {fileID: 454070650}
   - component: {fileID: 454070649}
+  - component: {fileID: 454070652}
   m_Layer: 0
-  m_Name: Target
+  m_Name: Goal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -243,6 +243,17 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 454070647}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &454070652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 454070647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c001077aac56f432da566011ded1a892, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &772101763
 GameObject:
   m_ObjectHideFlags: 0
@@ -341,8 +352,9 @@ GameObject:
   - component: {fileID: 826196294}
   - component: {fileID: 826196293}
   - component: {fileID: 826196292}
+  - component: {fileID: 826196295}
   m_Layer: 0
-  m_Name: Goal
+  m_Name: Mover
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -415,6 +427,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 826196290}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &826196295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 826196290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafcd8907a5324527ae179d68ea8c9ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  btGraph: {fileID: 11400000, guid: 339437bf182654796b6222f24a06fb32, type: 2}
 --- !u!1 &1034057259
 GameObject:
   m_ObjectHideFlags: 0

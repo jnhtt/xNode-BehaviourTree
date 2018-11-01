@@ -1,19 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using AI.BtGraph;
+﻿using UnityEngine;
 
 public class Data
 {
-    public Transform goal;
-    public Transform mover;
+    public Goal goal;
+    public Mover mover;
 }
 
 public class BtMain : MonoBehaviour
 {
-    public Transform goal;
-    public Transform target;
-    public BtGraph graph;
+    public Goal goal;
+    public Mover mover;
 
     private Data data;
 
@@ -21,16 +17,8 @@ public class BtMain : MonoBehaviour
     {
         data = new Data();
         data.goal = goal;
-        data.mover = target;
-    }
+        data.mover = mover;
 
-    private void Update()
-    {
-        try
-        {
-            graph.Exec(data);
-        } catch (System.Exception e) {
-            Debug.LogError(e);
-        }
+        mover.Init(data);
     }
 }

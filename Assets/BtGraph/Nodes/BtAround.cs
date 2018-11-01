@@ -15,7 +15,7 @@ namespace AI.BtGraph
         public override BtResult Exec(Data data)
         {
             float angle = rot == Rot.Right ? 30f : -30f;
-            data.mover.RotateAround(data.goal.position, Vector3.up, angle * Time.deltaTime);
+            data.mover.CachedTransform.RotateAround(data.goal.CachedTransform.position, Vector3.up, angle * Time.deltaTime);
             return BtResult.Success;
         }
     }
