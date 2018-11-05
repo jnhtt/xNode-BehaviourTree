@@ -20,7 +20,7 @@ namespace AI.BtGraph
             {
                 return next.Exec(data);
             }
-            return BtResult.Failure;
+            return BtResult.Success;
         }
     }
 }

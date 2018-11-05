@@ -23,8 +23,16 @@ namespace AI.BtGraph
             Base.BtNode btNode = null;
             foreach (var port in Outputs) {
                 if (port.IsConnected) {
-                    btNode = port.Connection.node as Base.BtNode;
-                    btNodeList.Add(btNode);
+                    int cnt = port.ConnectionCount;
+                    for (int i = 0; i < cnt; ++i) {
+                        var p = port.GetConnection(i);
+                        if (p != null) {
+                            btNode = p.node as Base.BtNode;
+                            if (btNode != null) {
+                                btNodeList.Add(btNode);
+                            }
+                        }
+                    }
                 }
             }
             // 降順:priorityの値が大きい順に実行.

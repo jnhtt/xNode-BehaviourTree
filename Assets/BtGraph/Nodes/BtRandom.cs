@@ -7,7 +7,7 @@ namespace AI.BtGraph
     {
         public override bool Branch(Data data)
         {
-            return Random.Range(0, 1) == 0;
+            return Random.Range(0, 2) == 0;
         }
     }
 }
